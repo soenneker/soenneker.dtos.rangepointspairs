@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Soenneker.Dtos.RangePointsPairs.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.Dtos.RangePointsPairs\Soenneker.Dtos.RangePointsPairs.csproj" />
     </ItemGroup>
 
     <ItemGroup>
