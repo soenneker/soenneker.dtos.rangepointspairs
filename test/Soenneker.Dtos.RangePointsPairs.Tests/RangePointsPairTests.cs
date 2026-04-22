@@ -1,11 +1,10 @@
-﻿using Soenneker.Tests.Unit;
-using Xunit;
+using Soenneker.Tests.Unit;
 
 namespace Soenneker.Dtos.RangePointsPairs.Tests;
 
 public sealed class RangePointsPairTests : UnitTest
 {
-    [Fact]
+    [Test]
     public void Default()
     {
 
