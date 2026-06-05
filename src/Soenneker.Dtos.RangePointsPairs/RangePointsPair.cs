@@ -11,11 +11,17 @@ namespace Soenneker.Dtos.RangePointsPairs;
 [PublicOpenApiObject]
 public sealed record RangePointsPair
 {
+    /// <summary>
+    /// Gets or sets range.
+    /// </summary>
     [Required]
     [JsonPropertyName("range")]
     [JsonProperty(PropertyName = "range")]
     public MinMax.MinMax Range { get; set; } = null!;
 
+    /// <summary>
+    /// Gets or sets points.
+    /// </summary>
     [Required]
     [JsonPropertyName("points")]
     [JsonProperty("points")]
