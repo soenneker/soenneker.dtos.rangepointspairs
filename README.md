@@ -5,7 +5,7 @@
 
 # Soenneker.Dtos.RangePointsPairs
 
-A small, strongly typed data contract for associating a numeric range with a corresponding point value.
+A DTO for associating decimal bounds with an integer point value, suitable for scoring tiers, pricing bands, and similar API payloads.
 
 ## Install
 
@@ -13,13 +13,33 @@ A small, strongly typed data contract for associating a numeric range with a cor
 dotnet add package Soenneker.Dtos.RangePointsPairs
 ```
 
-## What you get
+## Usage
 
-- `RangePointsPair` — A small, strongly typed data contract for associating a numeric range with a corresponding point value.
+```csharp
+using Soenneker.Dtos.MinMax;
+using Soenneker.Dtos.RangePointsPairs;
 
-## API at a glance
+var tier = new RangePointsPair
+{
+    Range = new MinMax
+    {
+        Min = 80m,
+        Max = 89.99m
+    },
+    Points = 4
+};
+```
 
-| API | What it does | Result / important behavior |
-| --- | --- | --- |
-| `RangePointsPair.Range` | Gets or sets range. | Gets or sets range. |
-| `RangePointsPair.Points` | Gets or sets points. | Gets or sets points. |
+It serializes with the same shape under `System.Text.Json` and Newtonsoft.Json:
+
+```json
+{
+  "range": {
+    "min": 80,
+    "max": 89.99
+  },
+  "points": 4
+}
+```
+
+`Range` is required during initialization. The DTO does not decide whether bounds are inclusive, enforce `Min <= Max`, prevent overlapping tiers, or constrain negative point values; those are rules for the consuming application.

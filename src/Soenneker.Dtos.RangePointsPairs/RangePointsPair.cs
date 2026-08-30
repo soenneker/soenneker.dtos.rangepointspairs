@@ -12,15 +12,15 @@ namespace Soenneker.Dtos.RangePointsPairs;
 public sealed record RangePointsPair
 {
     /// <summary>
-    /// Gets or sets range.
+    /// Gets the numeric bounds associated with the point value.
     /// </summary>
     [Required]
     [JsonPropertyName("range")]
     [JsonProperty(PropertyName = "range")]
-    public MinMax.MinMax Range { get; set; } = null!;
+    public required MinMax.MinMax Range { get; set; }
 
     /// <summary>
-    /// Gets or sets points.
+    /// Gets or sets the points assigned to the range.
     /// </summary>
     [Required]
     [JsonPropertyName("points")]
