@@ -30,7 +30,7 @@ var tier = new RangePointsPair
 };
 ```
 
-It serializes with the same shape under `System.Text.Json` and Newtonsoft.Json:
+It serializes with the same shape under `System.Text.Json`:
 
 ```json
 {

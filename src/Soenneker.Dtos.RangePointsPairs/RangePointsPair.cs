@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using Soenneker.Attributes.PublicOpenApiObject;
+﻿using Soenneker.Attributes.PublicOpenApiObject;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
@@ -16,7 +15,6 @@ public sealed record RangePointsPair
     /// </summary>
     [Required]
     [JsonPropertyName("range")]
-    [JsonProperty(PropertyName = "range")]
     public required MinMax.MinMax Range { get; set; }
 
     /// <summary>
@@ -24,6 +22,5 @@ public sealed record RangePointsPair
     /// </summary>
     [Required]
     [JsonPropertyName("points")]
-    [JsonProperty("points")]
     public int Points { get; set; }
 }
